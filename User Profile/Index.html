@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./Sass/styling.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="NavigationContainer">
+        <ul class="Navigation">
+          <li class="navitem"><a href="#home">Home</a></li>
+          <li class="navitem"><a href="#about">About</a></li>
+          <li class="navitem"><a href="#Works">Works</a></li>
+          <li class="navitem"><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="home" class="HeroPage">
+      <section class="hero">
+        <h1>Hi, Im JB Tana</h1>
+      </section>
+    </div>
+
+    <section id="about" class="About">
+      <div class="AboutContainer">
+        <div class="Abouttext">
+          <p>
+            A recent Computer Engineering graduate with a strong foundation in
+            web development and a creative edge, eager to blend technical and
+            design skills in impactful projects.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="Works" class="Works">
+      <div class="WorkContainer">
+        <div class="WorkPicContainer"><img src="./images/Works.png" /></div>
+      </div>
+    </section>
+
+    <section id="contact" class="Contact">
+      <div class="ContactContainer">
+        <div class="contactcontent">
+          <div class="PicContainer"><img src="./images/phone.png" /></div>
+          <h1>Phone Number</h1>
+          <p>+63 949 6363 374</p>
+          <p>+63 949 6261 112</p>
+        </div>
+        <div class="contactcontent">
+          <div class="PicContainer"><img src="./images/smWhite.png" /></div>
+          <h1>Social Media</h1>
+          <p>Facebook: John Benedict Q. Tana</p>
+          <p>Instagram: JB Tana</p>
+          <p>Twitter: JB_Tana</p>
+          <p>LinkedIn: JB Tana</p>
+        </div>
+        <div class="contactcontent">
+          <div class="PicContainer"><img src="./images/Email.png" /></div>
+          <h1>Email</h1>
+          <p>jb.tana.cpe@gmail.com</p>
+          <p>johnbenedicttana@gmail.com</p>
+        </div>
+      </div>
+    </section>
+    <section class="footer">
+      <div class="FooterContent">
+        <p>Designed by: JB Tana</p>
+        <p>2024</p>
+        <p>Santa Rita, Pampanga.</p>
+      </div>
+    </section>
+  </body>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const aboutSection = document.querySelector(".About");
+      const WorksSection = document.querySelector(".Works");
+      const contactSection = document.querySelector(".Contact"); // Updated selector
+
+      function handleScroll() {
+        const aboutPosition = aboutSection.getBoundingClientRect().top;
+        const contactPosition = contactSection.getBoundingClientRect().top;
+        const WorksPosition = WorksSection.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight;
+
+        if (aboutPosition < screenPosition) {
+          aboutSection.classList.add("visible");
+        }
+
+        if (contactPosition < screenPosition) {
+          contactSection.classList.add("visible");
+        }
+        if (WorksPosition < screenPosition) {
+          WorksSection.classList.add("visible");
+        }
+      }
+
+      window.addEventListener("scroll", handleScroll);
+    });
+  </script>
+</html>

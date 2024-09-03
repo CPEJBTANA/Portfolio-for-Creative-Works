@@ -1,0 +1,298 @@
+$outline-color: green;
+$outline-width: 2px;
+$background-image-url: "../images/hero.jpg";
+$background-position-y: 10%;
+$hero-width: 50%;
+$hero-height: 100vh;
+$hero-font-size: 4.5rem;
+$hero-font-color: #ffaa33;
+$paragraph-font-size: 1.25rem;
+$paragraph-font-color: #fff;
+$paragraph-font-family: Arial, Helvetica, sans-serif;
+$nav-font-size: 1rem;
+$nav-font-color: white;
+$nav-font-family: Arial, Helvetica, sans-serif;
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  //outline: 2px solid rebeccapurple;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+header {
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.NavigationContainer {
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-top: 5%;
+  position: fixed;
+  align-items: center;
+
+  .Navigation {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    column-gap: 30px;
+    text-decoration: none;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+
+      &:focus,
+      &:active {
+        outline: none;
+      }
+    }
+  }
+}
+
+.navitem a {
+  color: $nav-font-color;
+  text-decoration: none;
+  font-size: $nav-font-size;
+  font-family: $nav-font-family;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.HeroPage {
+  width: 100%;
+  margin: auto;
+  //outline: $outline-width solid $outline-color;
+  height: auto;
+  display: flex;
+  background-image: url($background-image-url);
+  background-size: cover;
+  background-position: center $background-position-y;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hero {
+  margin: auto;
+  width: $hero-width;
+  height: $hero-height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  h1 {
+    font-size: $hero-font-size;
+    color: $hero-font-color;
+    animation: slideIn 1.5s ease-in-out;
+  }
+
+  p {
+    font-size: $paragraph-font-size;
+    color: $paragraph-font-color;
+    text-align: justify;
+    font-family: $paragraph-font-family;
+    animation: slideIn 2s ease-in-out;
+  }
+}
+
+.About {
+  width: 100%;
+  height: 100vh;
+  // outline: 2px solid red;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url(./about.jpg);
+  background-size: cover;
+  background-position: center $background-position-y;
+  opacity: 0; // Start invisible
+  transition: opacity 1s ease-in-out; // Smooth transition for fading
+
+  &.visible {
+    opacity: 1; // Fade in when scrolled into view
+    animation: fadeIn 2s ease-in-out;
+  }
+
+  .AboutContainer {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    column-gap: 50px;
+    // outline: 2px solid green;
+    padding: 5px;
+    height: 90vh;
+    align-items: center;
+
+    .Abouttext {
+      // outline: 2px solid red;
+      width: 60%;
+      margin-left: auto;
+      height: auto;
+      display: flex;
+      align-items: center;
+      margin-right: 30px;
+      p {
+        font-size: 1.75rem;
+        color: $paragraph-font-color;
+        text-align: right;
+        font-family: Arial, Helvetica, sans-serif;
+        animation: slideIn 2s ease-in-out;
+      }
+    }
+  }
+}
+
+.Contact {
+  width: 100%;
+  height: 100vh;
+  //outline: 2px solid red;
+  margin: auto;
+  display: flex;
+  opacity: 0; // Start invisible
+  transition: opacity 1s ease-in-out; // Smooth transition for fading
+  background-image: url(./contact.jpg);
+  background-size: cover;
+  background-position: center $background-position-y;
+  &.visible {
+    opacity: 1; // Fade in when scrolled into view
+    animation: fadeIn 2s ease-in-out;
+  }
+}
+
+.ContactContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: auto;
+  column-gap: 10%;
+  height: 80%;
+
+  .contactcontent {
+    // outline: 2px solid blue;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    width: 45%;
+    justify-content: center;
+    flex-direction: column;
+
+    h1 {
+      font-size: 2.25rem;
+      color: $hero-font-color;
+      margin-top: 40px;
+    }
+    p {
+      color: $paragraph-font-color;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  }
+}
+.PicContainer {
+  height: 150px; /* Adjust height as needed */
+  width: 150px; /* Adjust width as needed */
+
+  //  outline: 2px solid red;
+
+  img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain; /* Ensure image scales without distortion */
+  }
+}
+
+.Works {
+  width: 100%;
+  height: 100vh;
+  // outline: 2px solid red;
+  margin: auto;
+  display: flex;
+  background-color: black;
+  opacity: 0; // Start invisible
+  &.visible {
+    opacity: 1; // Fade in when scrolled into view
+    animation: fadeIn 2s ease-in-out;
+  }
+
+  .WorkContainer {
+    width: 90%;
+    height: 95%;
+    margin: auto;
+    //outline: 2px solid green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.WorkPicContainer {
+  height: 100%; /* Adjust height as needed */
+  width: 100%; /* Adjust width as needed */
+  padding: 5px;
+  // outline: 2px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    max-height: 130%;
+    max-width: 130%;
+    object-fit: contain; /* Ensure image scales without distortion */
+  }
+}
+
+.footer {
+  width: 100%;
+  height: 15vh;
+  background-color: black;
+
+  .FooterContent {
+    margin: auto;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      font-size: 1rem;
+      color: $nav-font-color;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  }
+}

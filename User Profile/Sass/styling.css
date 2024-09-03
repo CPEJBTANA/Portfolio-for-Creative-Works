@@ -1,0 +1,259 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+header {
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.NavigationContainer {
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-top: 5%;
+  position: fixed;
+  align-items: center;
+}
+.NavigationContainer .Navigation {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  text-decoration: none;
+}
+.NavigationContainer .Navigation a {
+  text-decoration: none;
+  color: inherit;
+}
+.NavigationContainer .Navigation a:focus, .NavigationContainer .Navigation a:active {
+  outline: none;
+}
+
+.navitem a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.HeroPage {
+  width: 100%;
+  margin: auto;
+  height: auto;
+  display: flex;
+  background-image: url("../images/hero.jpg");
+  background-size: cover;
+  background-position: center 10%;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hero {
+  margin: auto;
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.hero h1 {
+  font-size: 4.5rem;
+  color: #ffaa33;
+  animation: slideIn 1.5s ease-in-out;
+}
+.hero p {
+  font-size: 1.25rem;
+  color: #fff;
+  text-align: justify;
+  font-family: Arial, Helvetica, sans-serif;
+  animation: slideIn 2s ease-in-out;
+}
+
+.About {
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url(./about.jpg);
+  background-size: cover;
+  background-position: center 10%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.About.visible {
+  opacity: 1;
+  animation: fadeIn 2s ease-in-out;
+}
+.About .AboutContainer {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+  padding: 5px;
+  height: 90vh;
+  align-items: center;
+}
+.About .AboutContainer .Abouttext {
+  width: 60%;
+  margin-left: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+.About .AboutContainer .Abouttext p {
+  font-size: 1.75rem;
+  color: #fff;
+  text-align: right;
+  font-family: Arial, Helvetica, sans-serif;
+  animation: slideIn 2s ease-in-out;
+}
+
+.Contact {
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  background-image: url(./contact.jpg);
+  background-size: cover;
+  background-position: center 10%;
+}
+.Contact.visible {
+  opacity: 1;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.ContactContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: auto;
+  -moz-column-gap: 10%;
+       column-gap: 10%;
+  height: 80%;
+}
+.ContactContainer .contactcontent {
+  height: 90%;
+  display: flex;
+  align-items: center;
+  width: 45%;
+  justify-content: center;
+  flex-direction: column;
+}
+.ContactContainer .contactcontent h1 {
+  font-size: 2.25rem;
+  color: #ffaa33;
+  margin-top: 40px;
+}
+.ContactContainer .contactcontent p {
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.PicContainer {
+  height: 150px; /* Adjust height as needed */
+  width: 150px; /* Adjust width as needed */
+}
+.PicContainer img {
+  max-height: 100%;
+  max-width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain; /* Ensure image scales without distortion */
+}
+
+.Works {
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  background-color: black;
+  opacity: 0;
+}
+.Works.visible {
+  opacity: 1;
+  animation: fadeIn 2s ease-in-out;
+}
+.Works .WorkContainer {
+  width: 90%;
+  height: 95%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.WorkPicContainer {
+  height: 100%; /* Adjust height as needed */
+  width: 100%; /* Adjust width as needed */
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.WorkPicContainer img {
+  max-height: 130%;
+  max-width: 130%;
+  -o-object-fit: contain;
+     object-fit: contain; /* Ensure image scales without distortion */
+}
+
+.footer {
+  width: 100%;
+  height: 15vh;
+  background-color: black;
+}
+.footer .FooterContent {
+  margin: auto;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.footer .FooterContent p {
+  font-size: 1rem;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}/*# sourceMappingURL=styling.css.map */
