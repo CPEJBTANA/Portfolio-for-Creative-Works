@@ -1,0 +1,70 @@
+@media (max-width: 375px) {
+  .NavigationContainer {
+    margin-top: 10%;
+    .Navigation {
+      column-gap: 15px;
+    }
+  }
+
+  .navitem a {
+    font-size: 0.75rem; // Directly use the value instead of the variable
+  }
+
+  .hero {
+    width: 90%;
+    h1 {
+      font-size: 1rem; // Directly use the value instead of the variable
+    }
+    p {
+      font-size: 1rem; // Directly use the value instead of the variable
+    }
+  }
+
+  .About {
+    flex-direction: column;
+    .AboutContainer {
+      flex-direction: column;
+      .Abouttext {
+        width: 100%;
+        text-align: center;
+        p {
+          font-size: 0.25rem;
+        }
+      }
+    }
+  }
+
+  .ContactContainer {
+    flex-direction: column;
+    .contactcontent {
+      width: 80%;
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .PicContainer {
+    height: 100px;
+    width: 100px;
+  }
+
+  .WorkContainer {
+    width: 100%;
+  }
+
+  .WorkPicContainer {
+    height: 50%;
+    width: 50%;
+  }
+
+  .footer {
+    height: 10vh;
+    .FooterContent {
+      width: 80%;
+      p {
+        font-size: 0.75rem;
+      }
+    }
+  }
+}
